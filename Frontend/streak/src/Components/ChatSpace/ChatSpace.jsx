@@ -3,6 +3,7 @@ import {useState} from 'react';
 import "./ChatSpace.css"
 import {Search,Menu,ChatAlt,ell} from "heroicons-react"
 import {HiChatAlt, HiDotsVertical, HiOutlineSearch} from "react-icons/hi"
+import streak from "../Resources/Image/streak_logo.png"
 const ChatSpace = () =>{
     const [placeHolder,setPlaceHolder] = useState("Search or start new chat");
     const [chats,setChats] = useState(0)
@@ -15,12 +16,16 @@ const ChatSpace = () =>{
                     <div className="chatList">
                         <div className="chatHead">
                             <div className="profileImg">
-                                <img src="" alt="img"/>
+                                <img src={streak} alt="img"/>
                             </div>
                             <div className="other">
                                 <div className="stats"/>
-                                <HiChatAlt size="30px"/>
-                                <HiDotsVertical size="25px"/>
+                                <div style={{cursor:"pointer"}}>
+                                    <HiChatAlt size="30px"/>
+                                </div>
+                                <div style={{cursor:"pointer"}}>
+                                    <HiDotsVertical size="25px"/>
+                                </div>                                                                
                             </div>
                         </div>
                         <div className="searchSection">
@@ -52,8 +57,12 @@ const ChatSpace = () =>{
                                     </div>
                                 </div>
                                 <div className="messageInfo">
-                                    <HiOutlineSearch size="25px"/>
-                                    <HiDotsVertical size="25px"/>
+                                    <div style={{cursor:"pointer"}}>
+                                        <HiOutlineSearch size="25px"/>
+                                    </div>
+                                    <div style={{cursor:"pointer"}}>
+                                        <HiDotsVertical size="25px"/>
+                                    </div>                                    
                                 </div>
                             </div>
                             <form className="messageCont">
