@@ -12,126 +12,126 @@ body{
     width:100%;
     overflow-y: hidden;
 }
-.container > .head{
-    position:fixed;
-    width:100%;
-    background: #2f1e33;
-    padding:1.5em 3em 0em 3em;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    height:20vh;
-}
-.head > .section1{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 1.5em;
-}
-.head > .section1 > .brandName{
-    font-size: 1.8rem;
-    font-weight: bolder;
-    letter-spacing: 3px;
-}
-.head > .section1 > .SnM{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    gap:2em;
-}
-.head > .section1 > .SnM > .searchSection{
-    display:flex;
-    width:20em;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    padding:0.3em;
-    border-radius:0.5em;    
-}
-.searchSection input{
-    padding-left: 1em;
-    width:80%;
-    outline:none;
-    border:2px solid white;
-    font-size: 0.8rem;
-}
-.searchSection > .icon{
-    width:20%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-.SnM > .menu{
-    cursor:pointer;
-}
-.head > .section2{
-    width:35%;
-    display:flex;
-    justify-content: center;
-    gap:0.5em;
-    align-items: center;
-    margin-left:-2em;
-    padding-bottom:0.5em;
-}
-.head > .barSection{
-    display:flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left:-2em;
-    width:35%;    
-}
-.barSection > .movableBar{
-    padding:0.15em;
-    border-radius: 0.2em;
-    width:50%;
-    background: #7a1280;
-}
-.section2 > .chats, .groups {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    gap:0.5em;    
-    font-weight: bolder;
-    font-size: 0.8rem;
-    cursor:pointer
-}
-.section2 > .chats{
-    width:45%;
-    letter-spacing: 3px;
-}
-.section2 > .groups{
-    width:45%;
-    letter-spacing: 3px;
-}
-.numb{
-    background: #7a1280;
-    width:1.3em;
-    height:1.3em;
-    border-radius:0.65em;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: 0px;
-}
-.bdy{
-    padding-top:20vh;
+.container > .bdy{
     display:flex;
     justify-content: space-between;
     align-items: center;
 }
 .bdy > .chatList{
     width:35%;
-    height:80vh;
-    border-right:2px solid #2d1b31;
-    overflow-y: scroll;
+    height:100vh;
+    /* overflow-y: scroll; */
+}
+.chatList > .chatHead{
+    width:100%;
+    background: #2f1e33;
+    padding:1em;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height:4em;
+}
+.chatHead > .profileImg{
+    width:2.5em;
+    height:2.5em;
+    background:white;
+    border-radius: 1.5em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.profileImg img{
+    width:100%;
+    height: 100%;
+    border-radius: 1.5em;
+}
+.chatHead > .other{
+    padding-right:1em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:2em;
+}
+.other > .stats{
+    width:2em;
+    height:2em;
+    background: transparent;
+    border-radius: 1em;
+    border:2px solid white;
+}
+.chatList > .searchSection{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.chatList > .searchSection > .chatSearch{
+    margin:0.5em;
+    display:flex;
+    width:80%;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding:0.3em;
+    border-radius:0.5em;   
+    background: #ccc4c8;
+}
+.chatSearch input{
+    padding:0.5em;
+    width:85%;
+    outline:none;
+    border:2px solid #ccc4c8;
+    font-size: 0.8rem;
+    background: #ccc4c8;
+}
+.chatSearch > .icon{
+    width:15%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 .bdy > .chatMessage{
     width:65%;
     background:#e6b9de;
-    height:80vh;
-    border-left:2px solid #2d1b31;
+    height:100vh;
     overflow-y: hidden;
+}
+.chatMessage > .messageHead{
+    width:100%;
+    background: #2f1e33;
+    padding:1em;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 2px solid white;
+    height:4em;
+}
+.messageHead > .profileHead{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:1em;
+}
+.profileHead > .profile{
+    width:2.5em;
+    height:2.5em;
+    background:white;
+    border-radius: 1.5em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.profileHead > .profile img{
+    width:100%;
+    height: 100%;
+    border-radius: 1.5em;
+}
+.messageHead > .messageInfo{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:2em;
+    padding-right: 1em;
 }
 .chatMessage > .messageCont{  
     position:fixed;  

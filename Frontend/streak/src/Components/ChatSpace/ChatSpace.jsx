@@ -1,76 +1,84 @@
 import React from 'react';
 import {useState} from 'react';
 import "./ChatSpace.css"
-import {Search,Menu} from "heroicons-react"
-
+import {Search,Menu,ChatAlt,ell} from "heroicons-react"
+import {HiChatAlt, HiDotsVertical, HiOutlineSearch} from "react-icons/hi"
 const ChatSpace = () =>{
-    const [placeHolder,setPlaceHolder] = useState("Search for chats");
+    const [placeHolder,setPlaceHolder] = useState("Search or start new chat");
     const [chats,setChats] = useState(0)
     const [groups,setGroups] = useState(0)
+    const [startChat, setStartChat] = useState(true);
     return(
         <>
             <div className="container">
-                <div className="head">
-                    <div className="section1">
-                        <div className="brandName">
-                            StreakApp
+                <div className="bdy">
+                    <div className="chatList">
+                        <div className="chatHead">
+                            <div className="profileImg">
+                                <img src="" alt="img"/>
+                            </div>
+                            <div className="other">
+                                <div className="stats"/>
+                                <HiChatAlt size="30px"/>
+                                <HiDotsVertical size="25px"/>
+                            </div>
                         </div>
-                        <div className="SnM">
-                            <div className="searchSection">
+                        <div className="searchSection">
+                            <div className="chatSearch">
+                                <div className="icon">
+                                    <HiOutlineSearch size="25px" color="black"/>
+                                </div>
                                 <input 
                                     type="text" 
                                     placeholder={placeHolder}
                                 />
-                                <div className="icon">
-                                    <Search size="20px" color="black"/>
-                                </div>                            
                             </div>
-                            <div className="menu">
-                                <Menu size="40px"/>
+                            <div className="earth">
+                                stuff
                             </div>
                         </div>
                     </div>
-                    <div className="section2">
-                        <div className="chats">
-                            CHATS
-                            <div className="numb">
-                                {chats}
-                            </div>
-                        </div>
-                        <div className="groups">
-                            GROUPS
-                            <div className="numb">
-                                {groups}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="barSection">
-                        <div className="movableBar"/>
-                    </div>
-                </div>                
-                <div className="bdy">
-                    <div className="chatList">
-
-                    </div>
-                    <div className="chatMessage">
-                        <form className="messageCont">
-                            <div className="postMessage">
-                                <div className="emoji">
-                                    emoji
+                    {
+                        startChat ? 
+                        <div className="chatMessage">
+                            <div className="messageHead">
+                                <div className="profileHead">
+                                    <div className="profile">
+                                        <img src="" alt="img"/>
+                                    </div>
+                                    <div className="info">
+                                        <h3>User's Name</h3>
+                                        <p>last seen today at 12:49</p>
+                                    </div>
                                 </div>
-                                <textarea 
-                                    type="text" 
-                                    placeholder='Type your messages here'
-                                />                                                                  
-                            </div>    
-                            <button 
-                                type="submit"                                 
-                                className="send"
-                            >
-                                    send
-                            </button>  
-                        </form>                  
-                    </div>
+                                <div className="messageInfo">
+                                    <HiOutlineSearch size="25px"/>
+                                    <HiDotsVertical size="25px"/>
+                                </div>
+                            </div>
+                            <form className="messageCont">
+                                <div className="postMessage">
+                                    <div className="emoji">
+                                        emoji
+                                    </div>
+                                    <textarea 
+                                        type="text" 
+                                        placeholder='Type your messages here'
+                                    />                                                                  
+                                </div>    
+                                <button 
+                                    type="submit"                                 
+                                    className="send"
+                                >
+                                        send
+                                </button>  
+                            </form>                  
+                        </div>
+                        :
+                        <div className="chatMessage">
+                                             
+                        </div>
+                    }
                 </div>
             </div>
         </>
