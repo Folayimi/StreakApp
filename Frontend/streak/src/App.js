@@ -5,19 +5,22 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
-import UserLogin from './Components/Login/UserLogin'
+import UserSignin from './Components/Register/UserSignin'
 import ChatSpace from './Components/ChatSpace/ChatSpace';
 import LandingPage from './Components/LandingPage/LandingPage';
+import {AnimatePresence} from 'framer-motion';
 
 function App() {
   return (
       <>
         <Router>
+          <AnimatePresence mode="wait"> 
           <Routes>
             <Route exact path="/" element={<LandingPage/>}/>
-            <Route path="streak_app/login" element={<UserLogin/>}/>
-            <Route path="streak_app/chatspace" element={<ChatSpace/>}/>
+            <Route path="/login" element={<UserSignin/>}/>
+            <Route path="/chatspace" element={<ChatSpace/>}/>
           </Routes>
+          </AnimatePresence>
         </Router>
       </>
   );

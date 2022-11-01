@@ -1,5 +1,5 @@
 import os
-from sqlalchemy import Column, String, Integer, DateTime, TIME, create_engine
+from sqlalchemy import Column, String, Integer, DateTime, TIME, Date, create_engine
 from flask_sqlalchemy import SQLAlchemy
 import json
 from flask_migrate import Migrate
@@ -23,11 +23,12 @@ class Users(db.Model):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, unique=True)
-    firstName = Column(String, nullable=False)
-    lastName = Column(String, nullable=False)
-    email = Column(String, unique=True, nullable=False)
-    phoneNo = Column(Integer, unique=True, nullable=False)
-    password = Column(String, nullable=False)
+    firstName = Column(String(120), nullable=True)
+    lastName = Column(String(120), nullable=True)
+    email = Column(String(120), nullable=True)
+    phoneNo = Column(String(120), nullable=True)
+    password = Column(String, nullable=True)
+    dateOfBirth = Column(Date, nullable=True)
     friends = Column(String, nullable=True)
 
     def __inti__(self, firstName, lastName, email, phoneNo, password, friends):
